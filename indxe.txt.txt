@@ -1,0 +1,106 @@
+1. What is Java?
+Answer:
+Java is a high-level, object-oriented, platform‑independent programming language used to build web, mobile, and enterprise applications.
+
+2. Why is Java platform-independent?
+Answer:
+Java code is compiled into bytecode, which runs on the Java Virtual Machine (JVM), not directly on the OS.
+
+3. What is JVM?
+Answer:
+JVM (Java Virtual Machine) executes Java bytecode and provides memory management, garbage collection, and security.
+
+4. Difference between JDK, JRE, and JVM?
+Answer:
+
+JVM – Runs bytecode
+JRE – JVM + libraries
+JDK – JRE + development tools (compiler, debugger)
+
+
+Object-Oriented Concepts (OOP)
+5. What are the main OOP concepts in Java?
+Answer:
+
+Encapsulation
+Inheritance
+Polymorphism
+Abstraction
+
+
+6. What is Encapsulation?
+Answer:
+Binding data and methods together and restricting access using access modifiers (private, public, etc.).
+
+7. What is Inheritance?
+Answer:
+Inheritance allows a class to use properties and methods of another class using the extends keyword.
+
+8. What is Polymorphism?
+Answer:
+Ability of a method to behave differently based on the object invoking it (method overloading & overriding).
+
+9. What is Abstraction?
+Answer:
+Hiding implementation details and showing only essential features using abstract classes or interfaces.
+
+Java Keywords & Concepts
+10. What is static keyword?
+Answer:
+It belongs to the class, not to objects. Commonly used for variables, methods, and blocks.
+
+11. What is final keyword?
+Answer:
+
+final variable → value cannot change
+final method → cannot be overridden
+final class → cannot be inherited
+
+
+12. What is this keyword?
+Answer:
+Refers to the current object of the class.
+
+13. What is Constructors?
+Answer:
+A constructor is used to initialize objects and has the same name as the class.
+
+Exception Handling
+14. What is an exception?
+Answer:
+An exception is an unexpected event that disrupts normal program flow.
+
+15. Difference between checked and unchecked exceptions?
+Answer:
+
+Checked – Checked at compile time (IOException)
+Unchecked – Checked at runtime (NullPointerException)
+
+
+16. Keywords used in exception handling?
+Answer:
+try, catch, finally, throw, throws
+
+Collections Framework
+17. What is Collection Framework?
+Answer:
+A framework for storing and manipulating groups of objects (List, Set, Map).
+
+18. Difference between List and Set?
+Answer:
+
+List → allows duplicates, maintains order
+Set → no duplicates, unordered
+
+
+19. Difference between ArrayList and LinkedList?
+Answer:
+
+ArrayList – Faster access
+LinkedList – Faster insertion/deletion
+
+
+Multithreading
+20. What is a thread?
+Answer:
+A thread is a lightweight process that allows multiple tasks to run concurrently.
