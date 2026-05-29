@@ -1,1 +1,0 @@
-Read me to know about the project
