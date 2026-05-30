@@ -1,6 +1,9 @@
 package com.wipro.springmicro1;
 
-import junit.framework.Test;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import org.junit.jupiter.api.Test;
+
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
