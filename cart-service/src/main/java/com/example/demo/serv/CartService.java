@@ -18,18 +18,19 @@ public class CartService implements ICartService {
     @Autowired
     private RestTemplate restTemplate;
 
-    private final String CUSTOMER_URL = "http://localhost:8082/customer/";
-    private final String PRODUCT_URL = "http://localhost:8083/product/";
-
+	/*
+	 * private final String CUSTOMER_URL = "http://localhost:8082/customer/";
+	 * private final String PRODUCT_URL = "http://localhost:8083/product/";
+	 */
     public Cart addToCart(int cid, int pid, int qty) {
 
         // ✅ Call Customer Service
         Customer customer = restTemplate.getForObject(
-                CUSTOMER_URL + cid, Customer.class);
+        		"http://CUSTOMER-SERVICE/customer/" + cid, Customer.class);
 
         // ✅ Call Product Service
         Product product = restTemplate.getForObject(
-                PRODUCT_URL + pid, Product.class);
+        		"http://PRODUCT-SERVICE/product/" + pid, Product.class);
 
         double total = product.getCost() * qty;
 
@@ -44,7 +45,7 @@ public class CartService implements ICartService {
         customer.setRewardPoints(customer.getRewardPoints() + reward);
 
         // ✅ Update Customer back
-        restTemplate.put(CUSTOMER_URL + "update", customer);
+        restTemplate.put("http://CUSTOMER-SERVICE/customer/" + "update", customer);
 
         return cartRepo.save(cart);
     }
