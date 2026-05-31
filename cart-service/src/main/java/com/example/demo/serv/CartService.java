@@ -24,11 +24,11 @@ public class CartService implements ICartService {
 	 */
     public Cart addToCart(int cid, int pid, int qty) {
 
-        // ✅ Call Customer Service
+       
         Customer customer = restTemplate.getForObject(
         		"http://CUSTOMER-SERVICE/customer/" + cid, Customer.class);
 
-        // ✅ Call Product Service
+        
         Product product = restTemplate.getForObject(
         		"http://PRODUCT-SERVICE/product/" + pid, Product.class);
 
@@ -40,11 +40,11 @@ public class CartService implements ICartService {
         cart.setQuantity(qty);
         cart.setTotalPrice(total);
 
-        // ✅ Reward Logic
+       
         int reward = (int) (total / 10);
         customer.setRewardPoints(customer.getRewardPoints() + reward);
 
-        // ✅ Update Customer back
+        
         restTemplate.put("http://CUSTOMER-SERVICE/customer/" + "update", customer);
 
         return cartRepo.save(cart);
