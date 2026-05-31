@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -16,10 +17,10 @@ public class CartController {
     @Autowired
     ICartService service;
 
-    @PostMapping("/add")
-    public Cart addToCart(@RequestParam int cid,
-                          @RequestParam int pid,
-                          @RequestParam int qty) {
+    @PostMapping("/add/{cid}/{pid}/{qty}")
+    public Cart addToCart(@PathVariable int cid,
+                          @PathVariable int pid,
+                          @PathVariable int qty) {
         return service.addToCart(cid, pid, qty);
     }
 }
