@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -26,5 +27,9 @@ public class ProductController {
     @GetMapping("/{pid}")
     public Product getProduct(@PathVariable int pid) {
         return service.get(pid);
+    }
+    @DeleteMapping("/delete/{pid}")
+    public void deleteProduct(@PathVariable int pid) {
+    	service.deleteProductById(pid);
     }
 }

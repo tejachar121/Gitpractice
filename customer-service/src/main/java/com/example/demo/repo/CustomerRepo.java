@@ -7,5 +7,6 @@ import com.example.demo.entity.Customer;
 
 @Repository
 public interface CustomerRepo extends JpaRepository<Customer,Integer> {
+	public Customer findByCname(String cname);
 
 }

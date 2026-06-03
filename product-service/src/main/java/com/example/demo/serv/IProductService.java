@@ -7,5 +7,6 @@ public interface IProductService {
 	 public Product save(Product p);
 
 	    public Product get(int pid);
+	    public void deleteProductById(int pid);
 
 }

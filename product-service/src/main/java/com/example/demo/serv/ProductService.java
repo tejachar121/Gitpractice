@@ -21,4 +21,11 @@ public class ProductService implements IProductService {
 	        return repo.findById(pid).orElse(null);
 	    }
 
+		@Override
+		public void deleteProductById(int pid) {
+			repo.deleteById(pid);
+			
+		}
+	    
+
 }
