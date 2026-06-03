@@ -22,6 +22,7 @@ public class Customer {
     private String cname;
     private String password;
     private int rewardPoints;
+    private String roles;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "location_id")

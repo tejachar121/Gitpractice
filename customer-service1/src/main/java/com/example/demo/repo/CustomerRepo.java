@@ -5,11 +5,10 @@ import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.example.demo.entity.Cart;
+import com.example.demo.entity.Customer;
 
 @Repository
-public interface CartRepo extends JpaRepository<Cart,Integer> {
-	
-	Optional<Cart> findByCidAndPid(int cid, int pid);
+public interface CustomerRepo extends JpaRepository<Customer,Integer> {
+	Optional<Customer> findByCname(String cname);
 
 }

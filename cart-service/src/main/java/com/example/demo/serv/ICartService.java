@@ -5,4 +5,5 @@ import com.example.demo.entity.Cart;
 public interface ICartService {
 
     public Cart addToCart(int cid, int pid, int qty);
-}
+    public Cart removeFromCart(int cid,int pid,int qty);
+    }

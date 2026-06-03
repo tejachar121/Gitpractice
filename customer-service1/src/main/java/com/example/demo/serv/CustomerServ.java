@@ -1,6 +1,7 @@
 package com.example.demo.serv;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.entity.Customer;
@@ -11,6 +12,8 @@ public class CustomerServ implements ICustomerServ {
 
     @Autowired
     private CustomerRepo repo;
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     public Customer save(Customer c) {
         return repo.save(c);
@@ -21,5 +24,13 @@ public class CustomerServ implements ICustomerServ {
     }
     public void deleteCustomer(int cid) {
     	repo.deleteById(cid);
+    }
+    
+    
+	
+	public String addUser(Customer userInfo) {  // user registration
+        userInfo.setPassword(passwordEncoder.encode(userInfo.getPassword()));
+        repo.save(userInfo);
+        return "user added to system ";
     }
 }
